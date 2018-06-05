@@ -1,16 +1,17 @@
-import React from 'react';
+import React from "react";
+import {NavLink} from "react-router-dom";
 
 export const Header = (props) => {
-  return (
-    <nav className="navbar navbar-expan navbar-dark bg-dark">
-        <div className="container">
-          <div className="navbar-header">
-            <h3>{props.title}</h3>
-            <ul className="nav navbar-nav">
-              {props.items.map((item) => <li key={item.key} className="nav-item active"><a className="nav-link" href="{item.link}">{item.title}</a></li>)}
-            </ul>
-          </div>
-        </div>
-      </nav>
-  );
+    return (
+        <nav className="navbar navbar-default">
+            <div className="container">
+                <div className="navbar-header">
+                    <ul className="nav navbar-nav">
+                        <li><NavLink to={"/home"} activeStyle={{color: "red"}}>Home</NavLink></li>
+                        <li><NavLink to={"/user/10"} activeClassName={"active"}>User</NavLink></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    );
 };
